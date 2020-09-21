@@ -46,4 +46,6 @@ struct ParsedBinary {
 
 ## Conseils
 
-patience....
+La conversion entre les types sera d'une grande utilité.
+
+Le buffer de données à la fin du fichier n'est pas a interpreter, le seul facteur important est la conservation de son integrité.
