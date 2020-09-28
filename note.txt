@@ -1,0 +1,6 @@
+- data format (PCM ?)
+- channels
+- fq echantillonage
+- taille 1 sample 
+- taille buffer
+- encoded audio PCM 

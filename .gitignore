@@ -46,4 +46,6 @@ _deps
 # Ignore all local history of files
 .history
 
+note.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/cmake,linux,visualstudiocode
