@@ -11,7 +11,7 @@ int main(int argc, char* argv) {
     buffer = 0x4D75736963202020;
     buffer[8] = 0x50434D20;
     buffer[12] = 0x0002;
-    printf("your mom is %s", "gay");
+    buffer[]
 
     return 0;
 }
