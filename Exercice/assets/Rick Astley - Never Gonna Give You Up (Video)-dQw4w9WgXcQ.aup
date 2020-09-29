@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Rick Astley - Never Gonna Give You Up (Video)-dQw4w9WgXcQ_data" version="1.3.0" audacityversion="2.2.1" sel0="33.9257899795" sel1="33.9257899795" vpos="0" h="0.0000000000" zoom="33.4258981348" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Software" value="Lavf57.83.100"/>
+	</tags>
+	<wavetrack name="Rick Astley - Never Gonna Give You Up (Video)-dQw4w9WgXcQ" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1628438">
+				<waveblock start="0">
+					<simpleblockfile filename="e00003ab.au" len="180829" min="-0.744598" max="0.792786" rms="0.179328"/>
+				</waveblock>
+				<waveblock start="180829">
+					<simpleblockfile filename="e0000c95.au" len="180830" min="-0.722198" max="0.768402" rms="0.172125"/>
+				</waveblock>
+				<waveblock start="361659">
+					<simpleblockfile filename="e0000e0d.au" len="262144" min="-0.841492" max="0.80069" rms="0.18332"/>
+				</waveblock>
+				<waveblock start="623803">
+					<simpleblockfile filename="e00002da.au" len="262144" min="-0.742554" max="0.786377" rms="0.183003"/>
+				</waveblock>
+				<waveblock start="885947">
+					<simpleblockfile filename="e00007ed.au" len="262144" min="-0.7547" max="0.792267" rms="0.174403"/>
+				</waveblock>
+				<waveblock start="1148091">
+					<simpleblockfile filename="e00003d4.au" len="262144" min="-0.754669" max="0.801575" rms="0.182086"/>
+				</waveblock>
+				<waveblock start="1410235">
+					<simpleblockfile filename="e0000f6c.au" len="218203" min="-0.740051" max="0.777832" rms="0.178816"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Rick Astley - Never Gonna Give You Up (Video)-dQw4w9WgXcQ" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1628438">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000a29.au" len="180829" min="-0.755585" max="0.880127" rms="0.182544"/>
+				</waveblock>
+				<waveblock start="180829">
+					<simpleblockfile filename="e0000243.au" len="180830" min="-0.793823" max="0.743713" rms="0.17489"/>
+				</waveblock>
+				<waveblock start="361659">
+					<simpleblockfile filename="e0000153.au" len="262144" min="-0.837341" max="0.921173" rms="0.18888"/>
+				</waveblock>
+				<waveblock start="623803">
+					<simpleblockfile filename="e0000b18.au" len="262144" min="-0.802002" max="0.912079" rms="0.189313"/>
+				</waveblock>
+				<waveblock start="885947">
+					<simpleblockfile filename="e0000776.au" len="262144" min="-0.811218" max="0.801758" rms="0.182128"/>
+				</waveblock>
+				<waveblock start="1148091">
+					<simpleblockfile filename="e000046e.au" len="262144" min="-0.771881" max="0.816315" rms="0.188696"/>
+				</waveblock>
+				<waveblock start="1410235">
+					<simpleblockfile filename="e00002f7.au" len="218203" min="-0.744812" max="0.746582" rms="0.184316"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

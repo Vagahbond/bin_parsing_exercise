@@ -1,12 +1,9 @@
 # Contexte
 
-Vous êtes de retour en 2010, et vous voulez écouter de la musique. Pas encore de smartphones avec Deezer ou Apple Music à cette époque. Il ne vous reste plus que votre petit MP3 en forme de clef USB, avec 200 MB de mémoire! Afin d'économiser de l'éspace, vous decidez de réduire la taille de vos musiques, quitte à y perdre de la qualité. 
+Vous êtes de retour en 2010, et vous voulez écouter de la musique. Pas encore de smartphones avec Deezer ou Apple Music à cette époque. Il ne vous reste plus que votre petit MP3 en forme de clef USB, avec 200 MB de mémoire! Afin d'économiser de l'espace, vous decidez de réduire la taille de vos musiques, quitte à y perdre de la qualité. Vous abandonnez la stéréo pour la mono!
 
 # Consigne
-Déchiffrez les entêtes du fichier fourni afin d'obtenir sa fréquence d'échantillonage et la taille que représente un sample. Puis, pour chaque sample dans le buffer, réduire sa taille de moitié. Il est possible proceder en créant un nouveau buffer.
-
-Diviser par deux la taille de chaque sample aura une influence sur sa taille maximum: 
-Si l'on effectue cette operation sur des samples de 16 bits chacun afins qu'ils ne fassent plus que 8 bits, on passe les valeurs minimum et maximum de 
+Déchiffrez les entêtes du fichier fourni afin d'obtenir sa fréquence d'échantillonage et la taille que représente un sample. Puis, utiliser lesample size pour delimiter chaque sample. Il faut savoir que le buffer alterne entre les deux channels: un sample sur deux est a gauche, et un sur deux est à droite. Pour passer en mono, il faut faire la moyenne des valeurs de chaque channel.
 
 
 ## Input
