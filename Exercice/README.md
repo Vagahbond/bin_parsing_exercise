@@ -1,13 +1,14 @@
 # Contexte
 
-Vous êtes de retour en 2010, et vous voulez écouter de la musique. Pas encore de smartphones avec Deezer ou Apple Music à cette époque. Il ne vous reste plus que votre petit MP3 en forme de clef USB, avec 200 MB de mémoire! Afin d'économiser de l'espace, vous decidez de réduire la taille de vos musiques, quitte à y perdre de la qualité. Vous abandonnez la stéréo pour la mono!
+Vous êtes de retour en 2005, et vous voulez écouter de la musique. Pas encore de smartphones avec Deezer ou Apple Music à cette époque. Il ne vous reste plus que votre petit MP3 en forme de clef USB, avec 200 MB de mémoire! Afin d'économiser de l'espace, vous decidez de réduire la taille de vos musiques, quitte à y perdre de la qualité. Vous abandonnez la stéréo pour la mono!
 
 # Consigne
-Déchiffrez les entêtes du fichier fourni afin d'obtenir sa fréquence d'échantillonage et la taille que représente un sample. Puis, utiliser lesample size pour delimiter chaque sample. Il faut savoir que le buffer alterne entre les deux channels: un sample sur deux est a gauche, et un sur deux est à droite. Pour passer en mono, il faut faire la moyenne des valeurs de chaque channel.
+Déchiffrez les entêtes du fichier fourni afin d'obtenir sa fréquence d'échantillonage et la taille que représente un `sample`. Puis, utiliser le `sample size` pour delimiter les channels ddans chaque sample. Il faut savoir que le buffer alterne entre les deux channels: Pour chaque `sample`, on a une première valeur qui définit le channel gauche, puis une valeur qui définit le channel de droite. Pour passer en mono, il faut faire la moyenne des valeurs de chaque channel, pour chaque sample.
 
 
 ## Input
-Fichier au format WAV
+Fichier audio dans un format customisé, contenant seulement les informations necessaires pour pouvoir lire le ficher PCM sur Audacity.
+Sa structure est définie plus bas.
 
 ## Output
 Une structure contenant le nouveau buffer de données audio, et les valeurs permettant de le lire, selon la déclaration suivante :
@@ -22,6 +23,8 @@ struct audio_data
     char* audio_buffer;
 };
 ```
+
+`Attention`, après traitement, ces valeurs auront changé, à vous de trouver les changements à operer ! 
 
 ## Resources
 
@@ -38,6 +41,8 @@ struct audio_data
 
 
 ### Liens de documentation
+Voici quelques liens qui pourraient eventuellement vous etre utiles:
+
 [Cannonical wav description](http://soundfile.sapp.org/doc/WaveFormat/)
 
 [Other description](http://www.lightlink.com/tjweber/StripWav/Canon.html)
@@ -46,4 +51,4 @@ struct audio_data
 
 # Pour aller plus loin
 
-Pour entendre le resultat de votre algorithme vous pouvez telecharger le fichier sur [ce lien](), et tenter d'y appliquer votre code. Il est ensuite possible de faire un dump du buffer seul, et de l'ecouter avec la fonction d'import de fichiers audio brut sur Audacity. L'`encoding` est déterminé par la taille d'un sample multiplié par le nombre de channels.
+Pour entendre le resultat de votre algorithme vous pouvez telecharger le fichier sur [ce lien](https://drive.google.com/file/d/1obuSwsWXcT3MsGZPyo35xZm_4yxNr0vC/view?usp=sharing), et tenter d'y appliquer votre code. Il est ensuite possible de faire un dump du buffer seul, et de l'ecouter avec la fonction d'import de fichiers audio brut sur Audacity. L'`encoding` est déterminé par la taille d'un sample multiplié par le nombre de channels.
