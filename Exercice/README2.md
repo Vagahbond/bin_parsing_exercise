@@ -26,6 +26,13 @@ struct audio_data
 ## Resources
 
 ### Structure du fichier 
+| Début (octets) | Taille (octets) | Donnée          | endianness    | type de donné |
+| :------------: | :-------------: | :-------------: | :-----------: | :-----------: |
+| 0              | 2               | Bits par sample | big           | short         |
+| 2              | 2               | Nb channels     | big           | short         |
+| 4              | 2               | Freq. échant.   | little        | short         |
+| 6              | 4               | Taille buffer   | little        | size_t        |
+| 10             | x               | Buffer PCM      | little        | char*         |
 
 
 
@@ -39,4 +46,4 @@ struct audio_data
 
 # Pour aller plus loin
 
-Pour entendre le resultat de votre algorithme vous pouvez telecharger le fichier sur [ce lien](), et tenter d'y appliquer votre code. Il est ensuite possible de faire un dump du vuffer seul, et de l'ecouter avec la fonction d'import de fichiers audio brut sur Audacity. L'`encoding` est déterminé par la taille d'un sample multiplié par le nombre de channels.
+Pour entendre le resultat de votre algorithme vous pouvez telecharger le fichier sur [ce lien](), et tenter d'y appliquer votre code. Il est ensuite possible de faire un dump du buffer seul, et de l'ecouter avec la fonction d'import de fichiers audio brut sur Audacity. L'`encoding` est déterminé par la taille d'un sample multiplié par le nombre de channels.

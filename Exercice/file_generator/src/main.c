@@ -44,6 +44,47 @@
 
 #define AUDIO_CHUNK_DATA_START 44
 
+typedef int32_t buffer_size;
+
+bool write_exercise_file(const char *path, audio_data *data)
+{
+    FILE *f = fopen(path, "wb");
+
+
+
+    size_t output_length = *data->buffer_length + 10;
+
+    char *output = calloc(output_length, sizeof(char));
+    
+    
+
+
+    // bits per sample
+    short bps = 0x1000;
+    memcpy(output, &bps, 2);
+   
+
+    // nb channels
+    short nb_channels = 0x0200;
+    memcpy(output + 2, &nb_channels, 2);
+
+    // sample rate
+    short sample_rate = 0x80BB;
+    memcpy(output + 4, &sample_rate, 2);
+
+    // buffer size
+    buffer_size buffer_size = 0x68646300;
+    memcpy(output + 6, &buffer_size, 4);
+
+    // PCM buffer itself
+    memcpy(output + 10, data->audio_buffer, *data->buffer_length);
+
+
+    fwrite(output, sizeof(char), output_length, f);
+
+    fclose(f);
+}
+
 int main(int argc, char *argv)
 {
     char *buffer = readfile("../../assets/Extract.wav");
@@ -86,33 +127,7 @@ int main(int argc, char *argv)
 
     free(buffer);
 
-    size_t output_length = *data->buffer_length + (sizeof(short) * 3) + sizeof(u_int32_t);
-    char *output = calloc(
-        output_length,
-        sizeof(char));
-
-    // bits per sample
-    memcpy(output,     (char*) 0x10, 1);
-    memcpy(output + 1, (char*) 0x00, 1);
-    // nb channels
-    memcpy(output + 2, (char*) 0x02, 1);
-    memcpy(output + 3, (char*) 0x00, 1);
-
-    // sample rate
-    memcpy(output + 4, (char*) 0x80, 1);
-    memcpy(output + 5, (char*) 0xBB, 1);
-
-    // buffer size
-    memcpy(output + 6, (char*) 0x58, 1);
-    memcpy(output + 7, (char*) 0x64, 1);
-    memcpy(output + 8, (char*) 0x63, 1);
-    memcpy(output + 9, (char*) 0x00, 1);
-
-    // PCM buffer itself
-    memcpy(output + 10, data->audio_buffer, *data->buffer_length);
-
-
-    write_file("../../assets/output.bin", output, output_length);
+    write_exercise_file("../../assets/custom.bin", data);
 
     free(data->audio_format);
     free(data->byte_rate);
@@ -123,7 +138,7 @@ int main(int argc, char *argv)
     free(data->audio_buffer);
     free(data);
 
-    free(output);
+
 
     return 0;
 }
