@@ -1,49 +1,49 @@
+# Contexte
+
+Vous êtes de retour en 2010, et vous voulez écouter de la musique. Pas encore de smartphones avec Deezer ou Apple Music à cette époque. Il ne vous reste plus que votre petit MP3 en forme de clef USB, avec 200 MB de mémoire! Afin d'économiser de l'espace, vous decidez de réduire la taille de vos musiques, quitte à y perdre de la qualité. Vous abandonnez la stéréo pour la mono!
+
 # Consigne
-
-Un fichier contenant de l'audio compressé vous est donné. L'objectif est de parser les headers du fichier binaire, afin de connaitre la taille du fichier et la méthode de compression qui a été utilisée. Ces valeurs vous permettrons ensuite de décompresser le buffer de données de son. Vous devez renvoyer ces informations par la suite dans une structure semblable à la suivante.
-
-
-Voici la structure du fichier binaire : 
-
-| Début (octets) | Taille (octets) | Donnée        | endianness    | type de donné |
-| :------------: | :-------------: | :-----------: | :-----------: | :-----------: |
-| 0              | 8               | Type de média | big           | char*         |
-| 9              | 4               | Format audio  | big           | char*         |
-| 13             | 2               | Nb channels   | little        | u_int16       |
-| 14             | 4               | Fq echantill. | little        | u_int32       |
-| 18             | 2               | Taille sample | little        | u_int16       |
-| 20             | 64              | Titre         | big           | char*         |
-| 84             | 32              | Artiste       | big           | char*         |
-| 116            | 8               | Longueur flux | little        | size_t        |
-| 124            | X               | données audio | little        | X             |
+Déchiffrez les entêtes du fichier fourni afin d'obtenir sa fréquence d'échantillonage et la taille que représente un sample. Puis, utiliser lesample size pour delimiter chaque sample. Il faut savoir que le buffer alterne entre les deux channels: un sample sur deux est a gauche, et un sur deux est à droite. Pour passer en mono, il faut faire la moyenne des valeurs de chaque channel.
 
 
-### Inputs
-Fichier binaire appelé `input.bin` présent dans le repertoire courant.
-Un pointeur vers une instance de struct `ParsedBinary` qu'il faut completer.
+## Input
+Fichier au format WAV
 
-### Outputs
-Structure dont le pointeur est passé en paramètre, contenant les données du fichier:
+## Output
+Une structure contenant le nouveau buffer de données audio, et les valeurs permettant de le lire, selon la déclaration suivante :
 
-```cpp
-struct ParsedBinary {
-    char* mediaType,
-    char* audioFormat,
-    unsigned short nb_channels,
-    unsigned int sample_rate,
-    unsigned short sample_size,
-    char* title,
-    char* artist,
-    size_t buffer_length,
-    char* buffer
+```C
+struct audio_data
+{
+    short sample_size;
+    short nb_channels;
+    short sample_rate;
+    size_t buffer_length;
+    char* audio_buffer;
 };
 ```
 
+## Resources
 
-## Conseils
+### Structure du fichier 
+| Début (octets) | Taille (octets) | Donnée          | endianness    | type de donné |
+| :------------: | :-------------: | :-------------: | :-----------: | :-----------: |
+| 0              | 2               | Bits par sample | big           | short         |
+| 2              | 2               | Nb channels     | big           | short         |
+| 4              | 2               | Freq. échant.   | little        | short         |
+| 6              | 4               | Taille buffer   | little        | size_t        |
+| 10             | x               | Buffer PCM      | little        | char*         |
 
-La conversion entre les types des pointeurs sera d'une grande utilité.
 
-Le buffer de données à la fin du fichier n'est pas a interpreter, le seul facteur important est la conservation de son integrité.
 
-Cependant si vous disposez de Audacity vous pourrez extraire dans un fichier à part ce buffer et l'ecouter en utilisant la fonction "raw audio data" dans "fichier" -> "import", et en renseignant les bons paramètres.
+
+### Liens de documentation
+[Cannonical wav description](http://soundfile.sapp.org/doc/WaveFormat/)
+
+[Other description](http://www.lightlink.com/tjweber/StripWav/Canon.html)
+
+[Endianness](https://en.wikipedia.org/wiki/Endianness)
+
+# Pour aller plus loin
+
+Pour entendre le resultat de votre algorithme vous pouvez telecharger le fichier sur [ce lien](), et tenter d'y appliquer votre code. Il est ensuite possible de faire un dump du buffer seul, et de l'ecouter avec la fonction d'import de fichiers audio brut sur Audacity. L'`encoding` est déterminé par la taille d'un sample multiplié par le nombre de channels.
