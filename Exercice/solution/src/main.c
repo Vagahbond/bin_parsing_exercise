@@ -93,10 +93,10 @@ int main(int arg, char* argv) {
 
     stereo_to_mono(input_file, data);
 
+    
+    free(data->audio_buffer);
     free(data);
     fclose(input_file);
-
-    puts("ran until the end ! ");
     return 0;
 }
 
