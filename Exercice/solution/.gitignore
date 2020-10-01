@@ -44,14 +44,9 @@ _deps
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
-
-
 .history
 
+build/*
+build
 
-./Exercice/assets/*
-./Exercice/assets
-
-Exercice/assets/*
-Exercice/assets
 # End of https://www.toptal.com/developers/gitignore/api/cmake,linux,visualstudiocode

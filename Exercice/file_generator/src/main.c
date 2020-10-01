@@ -59,24 +59,24 @@ bool write_exercise_file(const char *path, audio_data *data)
     
 
 
-    // bits per sample
-    short bps = 0x1000;
+    // bits per sample big endian
+    short bps = 0x0010;
     memcpy(output, &bps, 2);
    
 
-    // nb channels
-    short nb_channels = 0x0200;
+    // nb channels big endian
+    short nb_channels = 0x0002;
     memcpy(output + 2, &nb_channels, 2);
 
-    // sample rate
+    // sample rate little endian
     short sample_rate = 0x80BB;
     memcpy(output + 4, &sample_rate, 2);
 
-    // buffer size
-    buffer_size buffer_size = 0x68646300;
+    // buffer size little endian
+    buffer_size buffer_size = 0x58646300;
     memcpy(output + 6, &buffer_size, 4);
 
-    // PCM buffer itself
+    // PCM buffer itself little endian 
     memcpy(output + 10, data->audio_buffer, *data->buffer_length);
 
 
@@ -91,7 +91,7 @@ int main(int argc, char *argv)
 
     if (buffer == NULL)
     {
-        puts("RIP FDP");
+        puts("Couldnt open file.");
     }
 
     audio_data *data = calloc(1, sizeof(audio_data));

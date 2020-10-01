@@ -3,7 +3,9 @@
 Vous êtes de retour en 2005, et vous voulez écouter de la musique. Pas encore de smartphones avec Deezer ou Apple Music à cette époque. Il ne vous reste plus que votre petit MP3 en forme de clef USB, avec 200 MB de mémoire! Afin d'économiser de l'espace, vous decidez de réduire la taille de vos musiques, quitte à y perdre de la qualité. Vous abandonnez la stéréo pour la mono!
 
 # Consigne
-Déchiffrez les entêtes du fichier fourni afin d'obtenir sa fréquence d'échantillonage et la taille que représente un `sample`. Puis, utiliser le `sample size` pour delimiter les channels ddans chaque sample. Il faut savoir que le buffer alterne entre les deux channels: Pour chaque `sample`, on a une première valeur qui définit le channel gauche, puis une valeur qui définit le channel de droite. Pour passer en mono, il faut faire la moyenne des valeurs de chaque channel, pour chaque sample.
+Déchiffrez les entêtes du fichier fourni afin d'obtenir sa fréquence d'échantillonage et la taille que représente un `sample`. Puis, utiliser ce chiffre pour delimiter les channels dans chaque sample. Il faut savoir que le buffer alterne entre les deux channels: Un sample sur deux est déstiné au canal de gauche, et le reste est déstiné au canal de droite.
+Afin de mélanger correctement les channels, il suffit de faire la moyenne entre celui de gauche et celui de droite.
+Par exemple, si un sample de gauche est à 112 et que le suivant(donc le canal de droite du même moment) est à 95, ces deux samples seront rassemblé en un seul qui a la valeur de 103.
 
 
 ## Input
