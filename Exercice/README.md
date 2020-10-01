@@ -12,6 +12,8 @@ Par exemple, si un sample de gauche est à 112 et que le suivant(donc le canal d
 Fichier audio dans un format customisé, contenant seulement les informations necessaires pour pouvoir lire le ficher PCM sur Audacity.
 Sa structure est définie plus bas.
 
+Ce fichier est téléchargeable [ici](https://drive.google.com/file/d/1obuSwsWXcT3MsGZPyo35xZm_4yxNr0vC/view?usp=sharing)).
+
 ## Output
 Une structure contenant le nouveau buffer de données audio, et les valeurs permettant de le lire, selon la déclaration suivante :
 
@@ -53,4 +55,4 @@ Voici quelques liens qui pourraient eventuellement vous etre utiles:
 
 # Pour aller plus loin
 
-Pour entendre le resultat de votre algorithme vous pouvez telecharger le fichier sur [ce lien](https://drive.google.com/file/d/1obuSwsWXcT3MsGZPyo35xZm_4yxNr0vC/view?usp=sharing), et tenter d'y appliquer votre code. Il est ensuite possible de faire un dump du buffer seul, et de l'ecouter avec la fonction d'import de fichiers audio brut sur Audacity. L'`encoding` est déterminé par la taille d'un sample multiplié par le nombre de channels.
+Pour entendre le resultat de votre algorithme vous pouvez [telecharger](https://drive.google.com/file/d/1obuSwsWXcT3MsGZPyo35xZm_4yxNr0vC/view?usp=sharing) le fichier, et tenter d'y appliquer votre code. Il est ensuite possible de faire un dump du buffer seul, et de l'ecouter avec la fonction d'import de fichiers audio brut sur Audacity. L'`encoding` est déterminé par la taille d'un sample multiplié par le nombre de channels.
