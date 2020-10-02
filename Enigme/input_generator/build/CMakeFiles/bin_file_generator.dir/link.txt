@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/bin_file_generator.dir/src/main.c.o  -o bin_file_generator 

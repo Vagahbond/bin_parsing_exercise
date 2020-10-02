@@ -54,4 +54,10 @@ _deps
 
 Exercice/assets/*
 Exercice/assets
+
+./Enigme/assets/*
+./Enigme/assets
+
+Enigme/assets/*
+Enigme/assets
 # End of https://www.toptal.com/developers/gitignore/api/cmake,linux,visualstudiocode
