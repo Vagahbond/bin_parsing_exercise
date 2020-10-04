@@ -17,5 +17,4 @@ Fichier binaire appelé `input.bin` présent dans le repertoire courant.
 ### Outputs
 Le bon lien, celui qui mène à l'indice suivant.
 
-[Une petite aide](https://en.wikipedia.org/wiki/Endianness)
 
