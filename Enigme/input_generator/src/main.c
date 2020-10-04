@@ -22,11 +22,11 @@ int main(int argc, char const *argv[])
     FILE *output = fopen("../../assets/file.bin", "wb");
 
     char *buffer = calloc(32 * 5, sizeof(char));
-    const char good_link[] = "https://www.shorturl.at/iopz6";
-    const char link2[] = "https://www.shorturl.at/ajpST";
-    const char link3[] = "https://www.shorturl.at/jmKV1";
-    const char link4[] = "https://www.shorturl.at/zHXZ5";
-    const char link5[] = "https://www.shorturl.at/rQ156";
+    const char good_link[] = "https://tinyurl.com/y3ec9lve";
+    const char link2[] = "https://tinyurl.com/pg5qs28";
+    const char link3[] = "https://tinyurl.com/7uonyyu";
+    const char link4[] = "https://tinyurl.com/y9jxuzvk";
+    const char link5[] = "https://tinyurl.com/yy2ekvaq";
 
     rawify(buffer, link5);
     rawify(buffer + 32, link3);

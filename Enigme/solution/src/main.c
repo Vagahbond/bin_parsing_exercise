@@ -14,5 +14,7 @@ int main(int argc, char const *argv[])
         printf("%s\n", buffer);
     }
 
+    fclose(input);
+    free(buffer);
     return 0;
 }
